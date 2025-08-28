@@ -1,49 +1,84 @@
-# 🤖 Trivia Quiz Bot (OpenTrivia API) - Bots.Business Bot ( Telegram Bot )
+# dmekdjdjdjddbot - chat bot
+It is repository for chat bot: [@dmekdjdjdjddbot](https://t.me/dmekdjdjdjddbot)
 
-A fully working quiz bot built for **Bots.Business** that fetches live questions from the free [OpenTriviaDB](https://opentdb.com/) API.  
-Users can play unlimited trivia questions across different categories like General Knowledge, Science, History, and Entertainment.  
-The bot randomizes answers, checks user responses, and keeps track of scores and accuracy.
+## What it is?
+This repository can be imported to [Bots.Business](https://bots.business) as a worked chat bot.
 
----
+[Bots.Business](https://bots.business) - it is probably the first CBPaaS - Chat Bot Platform as a Service.
 
-## ✨ Features
-- 🎮 Unlimited random trivia questions  
-- 📚 Multiple categories & difficulties  
-- 🔀 Answers shuffled each time  
-- 🏆 Tracks user score and accuracy  
-- 📊 `/stats` command shows performance  
-- 🌍 Works globally with free trivia API  
+A CBPaaS is a cloud-based platform that enables developers to create chatbots without needing to build backend infrastructure.
 
----
+## Create your own bot for Telegram from this Git repo
 
-## 🚀 Commands
-- `/start` → Welcome message  
-- `/quiz` → Get a random trivia question  
-- `/checkQuizAnswer` → Select an answer (auto-checks correct/wrong)  
-- `/stats` → Show your score and accuracy  
+How to create bot?
+1. Create bot with [@BotFather](https://telegram.me/BotFather) and take Secret Token
+2. Create bot in App and add Secret Token
+3. Add Public Key from App as [Deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) with read access (and write access for bot exporting if you need it)
+4. Do import for this git repo
 
----
+Now you can talk with yours new Telegram Bot
 
-## 🛠️ Setup
-1. Create a new bot on **Bots.Business**.  
-2. Add the provided BJS code with commands:  
-   - `/start`  
-   - `/quiz`  
-   - `/onQuizResult`  
-   - `/checkQuizAnswer`  
-   - `/stats`  
-3. That’s it! Start playing by typing `/quiz`.  
+See [more](https://help.bots.business/getting-started)
 
----
+## Commands - in commands folder
+File name - it is command name (Bot it can be rewritten in command description)
 
-## 🎥 Video Tutorial: How to import GitHub Bots.Business bots to Bots.Business
+Command can have: `name`, `help`, `aliases` (second names), `answer`, `keyboard`, `scnarios` (for simple logic) and other options.
 
-[![Watch the video](https://img.youtube.com/vi/irYn0_UvAcY/0.jpg)](https://www.youtube.com/watch?v=irYn0_UvAcY)
+### Command description
+It is file header:
 
----
+    /*CMD
+      command: /test
+      help: this is help for ccommand
+      need_reply: [ true or false here ]
+      auto_retry_time: [ time in sec ]
+      answer: it is example answer for /test command
+      keyboard: button1, button2
+      aliases: /test2, /test3
+    CMD*/
 
-## 🔮 Ideas for Expansion
-- Add difficulty selector (Easy, Medium, Hard).  
-- Add category selector (Science, History, Games).  
-- Add leaderboard using `topboardlib`.  
-- Create a daily challenge mode (1 question per day).  
+See [more](https://help.bots.business/commands)
+
+### Command body
+It is command code in JavaScript.
+Use Bot Java Script for logic in command.
+
+For example:
+> Bot.sendMessage(2+2);
+
+See [more](https://help.bots.business/scenarios-and-bjs)
+
+
+## Libraries - in libs folder
+You can store common code in the libs folder. File name - it is library name.
+
+For example code in myLib.js:
+
+    function hello(){ Bot.sendMessage("Hello from lib!") }
+    function goodbye(name){ Bot.sendMessage("Goodbye, " + name) }
+
+    publish({
+      sayHello: hello,
+      sayGoodbyeTo: goodbye
+    })
+
+then you can run in any bot's command:
+
+    Libs.myLib.hello()
+    Libs.myLib.sayGoodbyeTo("Alice")
+
+See [more](https://help.bots.business/git/library)
+
+## Other bots example
+See other bots examples in the [github](https://github.com/bots-business?utf8=✓&tab=repositories&q=&type=public&language=javascript) or in the [Bot Store](https://bots.business/)
+
+
+## Other help
+[Help.bots.business](https://help.bots.business)
+
+## API
+See [API](https://api.bots.business/docs#/docs/summary)
+
+
+![](https://bots.business/images/web-logo.png)
