@@ -36,6 +36,12 @@ The bot randomizes answers, checks user responses, and keeps track of scores and
 
 ---
 
+## 🎥 Video Tutorial: How to import GitHub Bots.Business bots to Bots.Business
+
+[![Watch the video](https://img.youtube.com/vi/irYn0_UvAcY/0.jpg)](https://www.youtube.com/watch?v=irYn0_UvAcY)
+
+---
+
 ## 🔮 Ideas for Expansion
 - Add difficulty selector (Easy, Medium, Hard).  
 - Add category selector (Science, History, Games).  
